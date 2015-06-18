@@ -1,0 +1,120 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title Hello World
+
+    link(rel='stylesheet', type='text/css', href='build/build.css')
+
+    body <body style="background:#c0392b;">
+
+    article
+
+      section
+        h2 Projecte de sintesi
+        h2 Club natació Tortosa
+        h3
+         ul
+          li 
+          li Albert Cañelles
+          li &
+          li Francesc Forés
+
+      section
+        h2 Framework CodeIgniter
+        h3 Model Vista Controlador
+        <img src="images/mvc.png" height="400" width="400">
+      section
+        h2 Base de dades
+        <img src="images/bd.png" height="450" width="500">
+
+      section
+        h2 CRUD 
+        h3 (Create Read Update Delete)
+        h3 Active record
+        ul
+          li
+          li Create
+          li Read
+          li Update
+          li Delete
+
+      section
+        h2 Create
+        pre 
+          code.language-javascript.
+             public function insertar_url($titol, $url){
+                $data = array(
+                  'TITUL' => $titol,
+                  'URL' => $url
+                );
+                $this->db->insert('URLS', $data);
+             }   
+
+      section
+        h2 Read
+        pre 
+          code.language-javascript.
+             public function get_urls() {
+                $this->db->select('ID_ENLLAS, TITUL, URL');
+                $query = $this->db->get('URLS');
+                return $query->result_array();
+              }
+      section
+        h2 Update
+        pre 
+          code.language-javascript.
+             function modificar_resultats($id, $resultats) {    
+                $data = array(
+                'ID_COMPETICIO' => $id,
+                'resultats' => $resultats
+                );
+                $this->db->where('ID_COMPETICIO', $id);
+                return $this->db->update('CALENDARI', $data);
+              }
+      section
+        h2 Delete
+        pre 
+          code.language-javascript.
+              public  function eliminar_usuari($id){
+              $this->db->where('ID_USUARI',$id);
+              return $this->db->delete('USUARIS_INTERNS');
+              } 
+      section
+        h2 Conntrol d'errors
+        pre 
+          code.language-javascript.
+                    $this->form_validation->set_rules('titol','Titol','required');
+                    $this->form_validation->set_message('required', '<div class="alert alert-danger alert-dismissable"> <button type="button" data-dismiss="alert" aria-hidden="true" class="close">&times;</button> <strong>Error!<span class="glyphicons glyphicons-skull"></span></strong> El camp %s es obligat</div>');
+                    $this->form_validation->set_rules("titol","titol","required|xss_clean|is_unique[GALERIES.nom]");
+                    $this->form_validation->set_message('is_unique', '<div class="alert alert-danger alert-dismissable"> <button type="button" data-dismiss="alert" aria-hidden="true" class="close">&times;</button> <strong>Error!<span class="glyphicons glyphicons-skull"></span></strong> La galeria %s  ja está registrada</div>');
+
+      section
+        h2 Scripts 
+        h3 Enviar correu per cada competicions
+        h3 Calcular la categoria segons l'edat
+      section
+        h2 Enviar Correu
+
+      section
+        h2 Calcular Categoria
+      section
+        h2 Pàgina Web
+        h3 <a href="http://192.168.204.215/projecte/index.php/client/index" target="_blank">Club Natació Tortosa</a>
+
+      section
+        h2 Programa de Gestió
+        
+        h3 <a href="http://192.168.204.215/projecte/index.php/admin/index" target="_blank" >NPanel</a>
+ 
+      section
+        h2.bullet Moltes gràcies
+        br
+        ul
+          li Produced by : <em>Albert Cañelles & Francesc Fores </em>
+          li Fins la pròxima :)
+        br
+        ul
+
+    script(src='build/build.js')

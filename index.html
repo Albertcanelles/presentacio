@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Presentacio by Albertcanelles</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Presentacio</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/Albertcanelles/presentacio" class="btn">View on GitHub</a>
+      <a href="https://github.com/Albertcanelles/presentacio/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/Albertcanelles/presentacio/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <p>doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title Hello World</p>
+
+<pre><code>link(rel='stylesheet', type='text/css', href='build/build.css')
+
+body &lt;body style="background:#c0392b;"&gt;
+
+article
+
+  section
+    h2 Projecte de sintesi
+    h2 Club natació Tortosa
+    h3
+     ul
+      li 
+      li Albert Cañelles
+      li &amp;
+      li Francesc Forés
+
+  section
+    h2 Framework CodeIgniter
+    h3 Model Vista Controlador
+    &lt;img src="images/mvc.png" height="400" width="400"&gt;
+  section
+    h2 Base de dades
+    &lt;img src="images/bd.png" height="450" width="500"&gt;
+
+  section
+    h2 CRUD 
+    h3 (Create Read Update Delete)
+    h3 Active record
+    ul
+      li
+      li Create
+      li Read
+      li Update
+      li Delete
+
+  section
+    h2 Create
+    pre 
+      code.language-javascript.
+         public function insertar_url($titol, $url){
+            $data = array(
+              'TITUL' =&gt; $titol,
+              'URL' =&gt; $url
+            );
+            $this-&gt;db-&gt;insert('URLS', $data);
+         }   
+
+  section
+    h2 Read
+    pre 
+      code.language-javascript.
+         public function get_urls() {
+            $this-&gt;db-&gt;select('ID_ENLLAS, TITUL, URL');
+            $query = $this-&gt;db-&gt;get('URLS');
+            return $query-&gt;result_array();
+          }
+  section
+    h2 Update
+    pre 
+      code.language-javascript.
+         function modificar_resultats($id, $resultats) {    
+            $data = array(
+            'ID_COMPETICIO' =&gt; $id,
+            'resultats' =&gt; $resultats
+            );
+            $this-&gt;db-&gt;where('ID_COMPETICIO', $id);
+            return $this-&gt;db-&gt;update('CALENDARI', $data);
+          }
+  section
+    h2 Delete
+    pre 
+      code.language-javascript.
+          public  function eliminar_usuari($id){
+          $this-&gt;db-&gt;where('ID_USUARI',$id);
+          return $this-&gt;db-&gt;delete('USUARIS_INTERNS');
+          } 
+  section
+    h2 Conntrol d'errors
+    pre 
+      code.language-javascript.
+                $this-&gt;form_validation-&gt;set_rules('titol','Titol','required');
+                $this-&gt;form_validation-&gt;set_message('required', '&lt;div class="alert alert-danger alert-dismissable"&gt; &lt;button type="button" data-dismiss="alert" aria-hidden="true" class="close"&gt;&amp;times;&lt;/button&gt; &lt;strong&gt;Error!&lt;span class="glyphicons glyphicons-skull"&gt;&lt;/span&gt;&lt;/strong&gt; El camp %s es obligat&lt;/div&gt;');
+                $this-&gt;form_validation-&gt;set_rules("titol","titol","required|xss_clean|is_unique[GALERIES.nom]");
+                $this-&gt;form_validation-&gt;set_message('is_unique', '&lt;div class="alert alert-danger alert-dismissable"&gt; &lt;button type="button" data-dismiss="alert" aria-hidden="true" class="close"&gt;&amp;times;&lt;/button&gt; &lt;strong&gt;Error!&lt;span class="glyphicons glyphicons-skull"&gt;&lt;/span&gt;&lt;/strong&gt; La galeria %s  ja está registrada&lt;/div&gt;');
+
+  section
+    h2 Scripts 
+    h3 Enviar correu per cada competicions
+    h3 Calcular la categoria segons l'edat
+  section
+    h2 Enviar Correu
+
+  section
+    h2 Calcular Categoria
+  section
+    h2 Pàgina Web
+    h3 &lt;a href="http://192.168.204.215/projecte/index.php/client/index" target="_blank"&gt;Club Natació Tortosa&lt;/a&gt;
+
+  section
+    h2 Programa de Gestió
+
+    h3 &lt;a href="http://192.168.204.215/projecte/index.php/admin/index" target="_blank" &gt;NPanel&lt;/a&gt;
+
+  section
+    h2.bullet Moltes gràcies
+    br
+    ul
+      li Produced by : &lt;em&gt;Albert Cañelles &amp; Francesc Fores &lt;/em&gt;
+      li Fins la pròxima :)
+    br
+    ul
+
+script(src='build/build.js')
+</code></pre>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/Albertcanelles/presentacio">Presentacio</a> is maintained by <a href="https://github.com/Albertcanelles">Albertcanelles</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
+
